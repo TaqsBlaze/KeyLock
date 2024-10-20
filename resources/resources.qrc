@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/cross.png</file>
+    <file>icons/computer-keyboard.png</file>
+    <file>icons/computer-keyboard-white.png</file>
+    <file>icons/toggle-off.png</file>
+    <file>icons/toggle-on.png</file>
+  </qresource>
+</RCC>
