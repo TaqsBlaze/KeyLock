@@ -26,6 +26,20 @@ class KeyLockerApp(QMainWindow):
         self.keyboard_blocker = None
         self.blocking_thread = None
 
+        # Variables for dragging
+        self.dragging = False
+        self.startPos = None
+
+    def mousePressEvent(self, event):
+        if event.button() == QtCore.Qt.LeftButton:
+            self.dragging = True
+            self.startPos = event.globalPos() - self.frameGeometry().topLeft()
+            event.accept()
+
+    def mouseMoveEvent(self, event):
+        if self.dragging:
+            self.move(event.globalPos() - self.startPos)
+            event.accept()
     def close_application(self):
 
         QtWidgets.QApplication.quit()
