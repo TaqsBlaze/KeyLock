@@ -64,22 +64,6 @@ class KeyLockerApp(QMainWindow):
                 self.blocking_thread = None
                 QMessageBox.information(self, "Stopped", "Keyboard blocking has stopped.")
 
-    def disable_keyboard(self):
-
-        self.keyboard_blocker = KeyboardBlocker()
-        self.blocking_thread = threading.Thread(target=self.keyboard_blocker.start)
-        self.blocking_thread.daemon = True  # Allows the thread to close when the main program exits
-        self.blocking_thread.start()
-        QMessageBox.information(self, "Started", "Keyboard blocking has started.")
-        pass
-    
-    def enable_keyboard(self):
-
-        if self.keyboard_blocker is not None:
-            self.keyboard_blocker.unhook()
-            self.keyboard_blocker = None
-            self.blocking_thread = None
-            QMessageBox.information(self, "Stopped", "Keyboard blocking has stopped.")
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
