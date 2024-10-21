@@ -20,7 +20,7 @@ class KeyLockerApp(QMainWindow):
         self.closebtn.clicked.connect(self.close_application)
         self.closebtn.setShortcut("Ctr+X")
         #transparent and frameless window
-        self.setWindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.WindowStaysOnTopHint)
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
 
         self.keyboard_blocker = None
